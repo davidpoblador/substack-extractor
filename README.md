@@ -1,7 +1,8 @@
+# substrack-extractor
 Crawls and extracts the text of a URL containing a Substack post
 
 # Why
-It's useful to be able to pipe those articles into your favorite LLM
+It's useful to be able to pipe those articles into your favorite LLM.
 
 # Utilization
 - Clone the repo
