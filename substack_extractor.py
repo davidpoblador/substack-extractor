@@ -19,12 +19,7 @@ def extract_substack_article(url):
         return article_content
 
 
-def main():
-    if len(sys.argv) < 2:
-        print("Please provide the Substack article URL as a parameter.")
-        return
-
-    url = sys.argv[1]
+def get_article(url):
     soup = BeautifulSoup(extract_substack_article(url), 'html.parser')
 
     header = soup.find('div', {'class': 'post-header'})
@@ -46,7 +41,17 @@ def main():
             output += "\n" + item.text + "\n"
             continue
 
-    print(output)
+    return output
+
+
+def main():
+    if len(sys.argv) < 2:
+        print("Please provide the Substack article URL as a parameter.")
+        return
+
+    url = sys.argv[1]
+
+    print(get_article(url))
 
 
 if __name__ == "__main__":
